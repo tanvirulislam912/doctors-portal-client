@@ -7,7 +7,7 @@ const MtAppoientment = () => {
 
     const {user} = useContext(AuthContext);
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`;
+    const url = `https://doctors-portal-server-chi-one.vercel.app/bookings?email=${user?.email}`;
 
     const { data: bookings = []} = useQuery({
          queryKey: ['bookings', user?.email],
@@ -60,7 +60,7 @@ const MtAppoientment = () => {
                     }
                     {
                        booking.price && booking.paid && <span 
-                       className="text-primary">Paid</span>
+                       className="text-green-500">Paid</span>
                     }
                   </tr>
                   )
